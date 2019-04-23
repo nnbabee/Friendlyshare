@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    width: 1250px;
+    width: 1300px;
     background: #ebebeb;
 }
 
@@ -102,7 +102,7 @@ h2{
     background: black;
     text-align: left;
     position: absolute;
-    left: 7%;
+    left: 8.5%;
     top: 400px;
     width: 400px;
     padding: 20px;
