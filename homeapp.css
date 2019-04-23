@@ -3,7 +3,21 @@ body{
     padding: 0;
 }
 
-h{
+.applogo button{
+    margin: 0;
+    float: left;
+    margin-left: 50px;
+    padding-top: 0px;
+    width: 100px;
+    height: 15px;
+    background: #32b998;
+    color: #fff;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.post_scroll h{
     color: white;
     background: #32b998;
     text-align: center;
@@ -108,4 +122,3 @@ h{
     height: 30px;
     margin: 0 auto;
     background-color: black;
-
