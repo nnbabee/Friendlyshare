@@ -3,8 +3,8 @@ body{
     padding: 0;
     width: 1400px;
     background: #ebebeb;
-    font-family: 'Big John', sans-serif;
-    font-weight: bolder;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
 }
 
 .menubar{
@@ -22,7 +22,6 @@ body{
 }
 .applogo h1{
     margin: 0;
-    font-weight: normal;
     float: left;
     margin-left: 20px;
     padding-top: 20px;
@@ -38,7 +37,6 @@ body{
 .menulog h1{
     margin: 0;
     float: left;
-    font-weight: normal;
     margin-left: 20px;
     padding-top: 10px;
 }
@@ -152,7 +150,6 @@ body{
 
 .info_area p{
     margin: 8px;
-    font-weight: normal;
     float: left;
     margin-left: 20px;
     padding-top: 30px;
