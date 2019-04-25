@@ -3,6 +3,8 @@ body{
     padding: 0;
     width: 1400px;
     background: #ebebeb;
+    font-family: 'Big John', sans-serif;
+    font-weight: bolder;
 }
 
 .menubar{
