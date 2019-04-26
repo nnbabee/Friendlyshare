@@ -53,6 +53,8 @@ body{
 .box_area button {
     margin: 10px 141px;
     padding-top: 0px;
+    font-size: 30px;
+    font-weight: bold;
     width: 200px;
     height: 60px;
     background: #32b998;
@@ -76,13 +78,15 @@ body{
     float: left;
     margin-left: 55px;
     padding-top: 25px;
-    font-weight: 100;
+    font-weight: 50;
 }
 
 .registbutt button{
-    margin: 18px 32px;
+    margin: 15px 32px;
     float: left;
-    padding-top: 0px;
+    padding-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
     width: 150px;
     height: 30px;
     background: #333333;
@@ -96,6 +100,8 @@ body{
 
 .registbutt button:hover {
     background: #ffffff;
+    padding-top: 0px;
+    font-size: 30px;
     border-radius: 30px;
     color: #333;
     border: 2px solid #333;
