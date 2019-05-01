@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +39,11 @@
                 <img src="src\propicpost1.png" alt="">
                 <p><font size = "4">USERNAME</font></p>
                 <div class="threebutton">
+                <form method = "post" action = "backend/join_back.php?id_title=<?php echo $_GET['id_title']; ?>&username=<?php echo $_SESSION['username']; ?> ">
                     <button><font weight = "bold" size = "2">RATING</font></button><br>
                     <button><font size = "2">JOIN</font></button><br>
                     <button><font size = "2">REPORT</font></button><br>
+                </form>
                 </div>
             </div>
             <div class="info_area2">
@@ -47,22 +52,21 @@
                     </div>
                 <div style="width: 240px; height: 280px; overflow-y: scroll;">
                     <div class="info_mem">
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 1</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 2</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 3</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 4</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 5</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 6</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 7</font></p><br>
-                        <img src="src\propicpost2.png" alt="">
-                        <p><font size = "2">MEMBER 8</font></p><br>
+                    <?php
+                            include "backend\connect.php";
+                            $sql="select * from member_data WHERE id_title = '{$_GET['id_title']}'";
+                            $result = mysql_query($sql);
+                                    if($result){
+                                        while ($check = mysql_fetch_assoc($result)) {
+                                           echo '<img src="src\propicpost2.png" alt="">';
+                                           echo '<p><font size = "2">'.$check['username'].'</font></p><br>';
+                                        }
+                                    }else{
+                                        echo '<p>ไม่พบข้อมูล</p>';
+                                    }
+                    ?>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -141,15 +145,17 @@
                 <div class="comment_button">
                         <button id="myBtn"><font size = "6">+</font></button>
                     </div>
+                  
     
                     <div id="myModal" class="modal">
-                            <!-- Modal content -->
+                <form method = "post" action = "backend/postcomment.php?id_title= <?php echo $_GET['id_title']; ?>">        <!-- Modal content -->
                             <div class="modal-content">
                               <span class="close">&times;</span>
                               <p><font size = "4" color = "32b998">TEXT</font></p>
-                              <textarea name="" id="" cols="60" rows="15"></textarea><br>
-                              <button id="myBtn2"><font size = "2">COMMENT</font></button>
+                              <textarea name="comment" id="" cols="60" rows="15"></textarea><br>
+                              <button type = "submit" id="myBtn2"><font size = "2">COMMENT</font></button>
                             </div>
+                </form>            
                     </div>
                   
                 </div>

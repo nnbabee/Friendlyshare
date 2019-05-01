@@ -53,7 +53,7 @@
                                     $result = mysql_query($sql);
                                     if($result){
                                         while ($check = mysql_fetch_assoc($result)) {
-                                           echo '<a href="commentJoin.php"><li class="list-group-item"><h style="float: left;"><font size = "2">'.$check['title'].'</font></h></a>';
+                                           echo '<a href="commentJoin.php?id_title='.$check['id'].'"><li class="list-group-item"><h style="float: left;"><font size = "2">'.$check['title'].'</font></h></a>';
                                            echo '<p><font size = "2">'.$check['content'].'</font></p></li>';
                                         }
                                     }else{
