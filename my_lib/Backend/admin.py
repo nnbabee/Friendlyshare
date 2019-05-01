@@ -1,3 +1,6 @@
 from django.contrib import admin
-
-# Register your models here.
+from . import models
+admin.site.site_title = 'FRIENDLYSHARE'
+admin.site.site_header = 'FRIENDLYSHARE Administration'
+admin.site.register(models.Users)
+admin.site.register(models.Post)
