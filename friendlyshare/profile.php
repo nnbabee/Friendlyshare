@@ -21,7 +21,7 @@
     <div class="menubar">
         <div class="container">
             <div class="applogo">
-                    <a href="home.html"><img src="src\logo1.png" alt=""></a>
+                    <a href="index.php"><img src="src\logo1.png" alt=""></a>
                 <h1><font size = "6" color = "#ffffff">FRIENDLYSHARE</font></h1>
             </div>
         </div>
@@ -39,24 +39,37 @@
                                 <img src="src\profilepic.png" alt="Avatar" class="avatar">
                             </div>
                             <div>
-                                <h1 id="id01"style="position: absolute;left: 630px;top: 370px">Username</h1>
-                            </div>
-                            <div>
                                 <h2>E-mail : </h2>
-                                    <div>
-                                        <h3 id="id02"style="position: absolute;left: 600px;top: 455px"> </h1>
-                                    </div>
                             </div>
                         </form>
                     </div>
             </div>
         </div>
     </div>
+    <?php
+        require 'backend\sess.php';
+        include "backend\connect.php";
+        if(isset($_SESSION['username'])) {
+            $user = $_SESSION['username'];
+            $sql = "SELECT * FROM user_data WHERE username='$user'" ;
+            $result = mysql_query($sql);
+            if($result){
+                $check = mysql_fetch_array($result);
 
-    <script>
-        var element = document.getElementById("id02");
-        element.innerHTML = "Email output";
-    </script>
+                echo '<h1 style="position: absolute;left: 650px;top: 370px">'.$check['username'].'</font></h1>';
+                echo '<h3 style="position: absolute;left: 600px;top: 455px">'.$check['email'].'</font></h3>';
+                
+            }
+                else{
+            echo '<p>ไม่พบข้อมูล</p>';
+                }
+        }else{
+            echo 'ttt';
+        }
+        
+        
+    ?>
+    
     
 </body>
 </html>

@@ -16,7 +16,7 @@
     <div class="menubar">
         <div class="container">
             <div class="applogo">
-                    <img src="src/logo1.png" alt="">
+                    <a href="index.php"><img src="src/logo1.png" alt=""></a>
                     <h1><font size = "6" color = "#ffffff">FRIENDLYSHARE</font></h1>
             </div>
             <div class="menulog">

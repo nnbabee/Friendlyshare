@@ -6,7 +6,9 @@ include"connect.php";
 if(isset($_POST['title'])){
 	$title = $_POST['title'];
 	$content = $_POST['content'];
-	$sql = "INSERT INTO `post_data`(`id`, `title`, `content`) VALUES (null,'{$title}','{$content}')";
+	$tag = $_POST['tag'];
+	$member = $_POST['member'];
+	$sql = "INSERT INTO `post_data`(`id`, `title`, `content`, `tag`, `member`) VALUES (null,'{$title}','{$content}','{$tag}','{$member}')";
 	$result = mysql_query($sql);
 	if($result){
 		echo "alert('post success');";
@@ -20,4 +22,4 @@ if(isset($_POST['title'])){
 
 ?>
 </script>
-</html>
+</html> 
