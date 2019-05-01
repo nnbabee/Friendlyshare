@@ -24,7 +24,24 @@
             </div>
             <div class="menulog">
                     <a href="profile.php"><img src="src/propicpost3.png" alt=""></a>
-                    <h1><font size = "4" color = "#ffffff">USERNAME</font></h1><br>
+                    <?php
+                    require 'backend\sess.php';
+                    include "backend\connect.php";
+                    if(isset($_SESSION['username'])) {
+                        $user = $_SESSION['username'];
+                        $sql = "SELECT * FROM user_data WHERE username='$user'" ;
+                        $result = mysql_query($sql);
+                        if($result){
+                            $check = mysql_fetch_array($result);
+                            echo '<h style="margin: 0;float: right;font-weight: normal;margin-left: 0px; margin-right:100px; padding-top: 20px;" ><font size = "5" color = "#ffffff">'.$check['username'].'</font></h>';
+                        }
+                            else{
+                                echo '<p>ไม่พบข้อมูล</p>';
+                            }
+                    }else{
+                        echo 'ttt';
+                    }
+                    ?>
                     <button><a href="loginPage.php"><font size = "2">LOG OUT</font></a></button>
 
             </div>

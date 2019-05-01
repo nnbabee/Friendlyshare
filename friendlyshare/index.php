@@ -24,9 +24,26 @@
             <div class="applogo">
                 <img src="src\logo1.png" alt="">
                 <h1><font size = "6" color = "#ffffff">FRIENDLYSHARE</font></h1>
-                
-                <h style="margin: 0;float: right;font-weight: normal;margin-left: 50px;padding-top: 5px;" ><font size = "5" color = "#ffffff">USERNAME</font></h>  
-                <button style="position: absolute;left: 1080px;margin-top: 35px;float: right;padding-top: 10px;"><a href="loginPage.php"><font face size = "3">LOG OUT</font></a></button>
+                <?php
+                    require 'backend\sess.php';
+                    include "backend\connect.php";
+                    if(isset($_SESSION['username'])) {
+                        $user = $_SESSION['username'];
+                        $sql = "SELECT * FROM user_data WHERE username='$user'" ;
+                        $result = mysql_query($sql);
+                        if($result){
+                            $check = mysql_fetch_array($result);
+                            echo '<h style="margin: 0;float: right;font-weight: normal;margin-left: 20px; margin-right:50px; padding-top: 5px;" ><font size = "5" color = "#ffffff">'.$check['username'].'</font></h>';
+                        }
+                            else{
+                                echo '<p>ไม่พบข้อมูล</p>';
+                            }
+                    }else{
+                        echo 'ttt';
+                    }
+                ?>
+                <!--<h style="margin: 0;float: right;font-weight: normal;margin-left: 50px;padding-top: 5px;" ><font size = "5" color = "#ffffff">USERNAME</font></h>  -->
+                <button style="position: absolute;left: 1050px;margin-top: 40px;float: right;padding-top: 10px;"><a href="loginPage.php"><font face size = "3">LOG OUT</font></a></button>
                 <a href="profile.php"><img style="margin-top: 0px;float: right;padding-top: 10px;" src="src/propicpost3.png" alt=""></a>
                 
             </div>
