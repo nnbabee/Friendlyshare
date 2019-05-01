@@ -39,11 +39,10 @@
                                 echo '<p>ไม่พบข้อมูล</p>';
                             }
                     }else{
-                        echo 'ttt';
+                        echo 'window.location.replace("../loginPage.php");';
                     }
                 ?>
-                <!--<h style="margin: 0;float: right;font-weight: normal;margin-left: 50px;padding-top: 5px;" ><font size = "5" color = "#ffffff">USERNAME</font></h>  -->
-                <button style="position: absolute;left: 1050px;margin-top: 40px;float: right;padding-top: 10px;"><a href="loginPage.php"><font face size = "3">LOG OUT</font></a></button>
+                <button style="position: absolute;left: 1050px;margin-top: 35px;float: right;padding-top: 10px;"><a href="loginPage.php"><font face size = "3">LOG OUT</font></a></button>
                 <a href="profile.php"><img style="margin-top: 0px;float: right;padding-top: 10px;" src="src/propicpost3.png" alt=""></a>
                 
             </div>

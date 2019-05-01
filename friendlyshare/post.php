@@ -76,6 +76,8 @@
                     <input style="position:absolute;width: 350px;color: #32b998;left: 567px;top: 213px;background-color: black" type="text" name="title" value=""><br>
                     <textarea style="position:absolute;width: 450px;height: 250px;left: 470px;top: 370px;" name="content" id="" cols="30" rows="10" placeholder=""></textarea>
                     <button  type="submit" style="position:absolute;width: 100px;height: 70px;left: 680px;top: 630px;><font size = "5">POST</font></button><br> 
+                    
+
                 </form>
                 
             </div>

@@ -55,13 +55,14 @@
             $result = mysql_query($sql);
             if($result){
                 $check = mysql_fetch_array($result);
-
+                $use = $check['username'];
+                echo $user;
                 echo '<h1 style="position: absolute;left: 650px;top: 370px">'.$check['username'].'</font></h1>';
                 echo '<h3 style="position: absolute;left: 600px;top: 455px">'.$check['email'].'</font></h3>';
             }
-                else{
-            echo '<p>ไม่พบข้อมูล</p>';
-                }
+            else{
+                echo '<p>ไม่พบข้อมูล</p>';
+            }
         }else{
             echo 'ttt';
         }

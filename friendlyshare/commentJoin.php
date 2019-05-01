@@ -54,9 +54,21 @@
         <div class="container">
             <div class="info_area">
                 <img src="src\propicpost1.png" alt="">
-                <p><font size = "4">USERNAME</font></p>
+                
                 <div class="threebutton">
                 <form method = "post" action = "backend/join_back.php?id_title=<?php echo $_GET['id_title']; ?>&username=<?php echo $_SESSION['username']; ?> ">
+                    <?php
+                            include "backend\connect.php";
+                            $sql="select * from post_data WHERE id = '{$_GET['id_title']}'";
+                            $result = mysql_query($sql);
+                                    if($result){
+                                        while ($check = mysql_fetch_assoc($result)) {
+                                           echo '<p><font size = "4"> '.$check['username'].' </font></p>';
+                                        }
+                                    }else{
+                                        echo '<p>ไม่พบข้อมูล</p>';
+                                    }
+                    ?>
                     <button><font weight = "bold" size = "2">RATING</font></button><br>
                     <button><font size = "2">JOIN</font></button><br>
                     <button><font size = "2">REPORT</font></button><br>
@@ -96,18 +108,18 @@
         <div class="container">
             <div class="details_h">
             <h1><font size = "4">DETAILS</font></h1><br>
-            <p><font size = "2">FILTERS  :</font></p>
+            <p><font size = "4">FILTERS  :</font></p>
             <?php
                             include "backend\connect.php";
                             $sql="select * from post_data WHERE id = '{$_GET['id_title']}'";
                             $result = mysql_query($sql);
                                     if($result){
                                         while ($check = mysql_fetch_assoc($result)) {
-                                           echo '<p><font size = "2"> '.$check['tag'].' <u/font></p><br>';
-                                           echo '<p><font size = "2">MEMBERS  :</font></p>';
-                                           echo '<p><font size = "2"> '.$check['member'].' <u/font></p><br>';
-                                           echo '<p><font size = "2">BRAND  :</font></p>';
-                                           echo '<p><font size = "2"> '.$check['title'].' <u/font></p><br>';
+                                           echo '<p><font size = "4"> '.$check['tag'].' <u/font></p><br>';
+                                           echo '<p><font size = "4">MEMBERS  :</font></p>';
+                                           echo '<p><font size = "4"> '.$check['member'].' <u/font></p><br>';
+                                           echo '<p><font size = "4">BRAND  :</font></p>';
+                                           echo '<p><font size = "4"> '.$check['title'].' <u/font></p><br>';
                                         }
                                     }else{
                                         echo '<p>ไม่พบข้อมูล</p>';
@@ -116,7 +128,8 @@
             </div>
             <div class="details_area">
                 <img src="src\moredes1.png" alt=""><br>
-                <p style = "text-decoration: none;!important"><font size = "4"> <?php
+                <p style = "text-decoration: none;!important"><font size = "4"> 
+                <?php
                             include "backend\connect.php";
                             $sql="select * from post_data WHERE id = '{$_GET['id_title']}'";
                             $result = mysql_query($sql);
@@ -127,7 +140,7 @@
                                     }else{
                                         echo '<p>ไม่พบข้อมูล</p>';
                                     }
-            ?></font></p>
+                ?></font></p>
             </div>
         </div>
     </div>
@@ -161,10 +174,9 @@
 
                 <div class="comment_button">
                         <button id="myBtn"><font size = "6">+</font></button>
-                    </div>
+                </div>
                   
-    
-                    <div id="myModal" class="modal">
+                <div id="myModal" class="modal">
                 <form method = "post" action = "backend/postcomment.php?id_title= <?php echo $_GET['id_title']; ?>">        <!-- Modal content -->
                             <div class="modal-content">
                               <span class="close">&times;</span>
@@ -173,7 +185,7 @@
                               <button type = "submit" id="myBtn2"><font size = "2">COMMENT</font></button>
                             </div>
                 </form>            
-                    </div>
+                </div>
                   
                 </div>
         </div>

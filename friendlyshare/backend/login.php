@@ -19,8 +19,6 @@ if(isset($_POST['username'])){
 	
 		$_SESSION['email']=$row['email'];
 
-
-		
 		echo 'window.location.replace("../index.php");';
 
 	}
