@@ -23,9 +23,9 @@
                     <h1><font size = "6" color = "#ffffff">FRIENDLYSHARE</font></h1>
             </div>
             <div class="menulog">
-                    <img src="src/propicpost3.png" alt="">
+                    <a href="profile.php"><img src="src/propicpost3.png" alt=""></a>
                     <h1><font size = "4" color = "#ffffff">USERNAME</font></h1><br>
-                    <button><font size = "2">LOG OUT</font></button>
+                    <button><a href="loginPage.php"><font size = "2">LOG OUT</font></a></button>
 
             </div>
         </div>

@@ -8,11 +8,11 @@ if(isset($_GET['id_title'])){
 	$sql = "INSERT INTO `comment_data`(`id`, `id_title`, `comment`) VALUES (null,'{$_GET['id_title']}','{$comment}')";
 	$result = mysql_query($sql);
 	if($result){
-		echo "alert('post success');";
+		echo "alert('comment success');";
 		echo 'window.location.replace("../index.php");';
 	}
 	else{
-		echo "alert('post fail');";
+		echo "alert('comment fail');";
 		echo 'window.location.replace("../index.php");';
 	}
 }

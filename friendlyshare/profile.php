@@ -58,7 +58,6 @@
 
                 echo '<h1 style="position: absolute;left: 650px;top: 370px">'.$check['username'].'</font></h1>';
                 echo '<h3 style="position: absolute;left: 600px;top: 455px">'.$check['email'].'</font></h3>';
-                
             }
                 else{
             echo '<p>ไม่พบข้อมูล</p>';
