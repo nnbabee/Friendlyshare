@@ -74,19 +74,39 @@
     <div class="postinfo">
         <div class="container">
             <div class="details_h">
-                    <h1><font size = "4">DETAILS</font></h1><br>
-                    <p><font size = "2">FILTERS  :</font></p>
-                    <p><font size = "2">FOOD</font></p><br>
-                    <p><font size = "2">MEMBERS  :</font></p>
-                    <p><font size = "2">2 / 4</font></p><br>
-                    <p><font size = "2">BRAND  :</font></p>
-                    <p><font size = "2">NETFLIX</font></p><br>
-                    <p><font size = "2">DATE  :</font></p>
-                    <p><font size = "2">Time : DD MM YY</font></p>
+            <h1><font size = "4">DETAILS</font></h1><br>
+            <p><font size = "2">FILTERS  :</font></p>
+            <?php
+                            include "backend\connect.php";
+                            $sql="select * from post_data WHERE id = '{$_GET['id_title']}'";
+                            $result = mysql_query($sql);
+                                    if($result){
+                                        while ($check = mysql_fetch_assoc($result)) {
+                                           echo '<p><font size = "2"> '.$check['tag'].' <u/font></p><br>';
+                                           echo '<p><font size = "2">MEMBERS  :</font></p>';
+                                           echo '<p><font size = "2"> '.$check['member'].' <u/font></p><br>';
+                                           echo '<p><font size = "2">BRAND  :</font></p>';
+                                           echo '<p><font size = "2"> '.$check['title'].' <u/font></p><br>';
+                                        }
+                                    }else{
+                                        echo '<p>ไม่พบข้อมูล</p>';
+                                    }
+            ?>
             </div>
             <div class="details_area">
                 <img src="src\moredes1.png" alt=""><br>
-                <p><font size = "4">................................</font></p>
+                <p style = "text-decoration: none;!important"><font size = "4"> <?php
+                            include "backend\connect.php";
+                            $sql="select * from post_data WHERE id = '{$_GET['id_title']}'";
+                            $result = mysql_query($sql);
+                                    if($result){
+                                        while ($check = mysql_fetch_assoc($result)) {
+                                           echo $check['content'];
+                                        }
+                                    }else{
+                                        echo '<p>ไม่พบข้อมูล</p>';
+                                    }
+            ?></font></p>
             </div>
         </div>
     </div>
@@ -103,22 +123,18 @@
 
                 <div class="comment_scroll">
                     <div style="width: 235px; height: 400px; overflow-y: scroll;">
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
-                        <p><font size = "2">comments comments comments comments comments</font></p>
+                        <?php
+                            include "backend\connect.php";
+                            $sql="select * from comment_data WHERE id_title = '{$_GET['id_title']}'";
+                            $result = mysql_query($sql);
+                                    if($result){
+                                        while ($check = mysql_fetch_assoc($result)) {
+                                           echo '<p><font size = "2"> </font></p>'.$check['comment'].'</font></h></a>';
+                                        }
+                                    }else{
+                                        echo '<p>ไม่พบข้อมูล</p>';
+                                    }
+                        ?>
                     </div>  
                 </div>
 
